@@ -1,7 +1,8 @@
 package com.imooc.enums;
 
-public enum OrderStatusEnum {
-    NEW(0,"新下单"),FINISH(1,"已完成"), CANCLE(2, "取消订单");
+
+public enum OrderStatusEnum implements CodeEnum{
+    NEW(0,"新下单"),FINISH(1,"已完成"), CANCLE(2, "已取消");
     private Integer code;
     private String msg;
 
@@ -25,4 +26,6 @@ public enum OrderStatusEnum {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
+
 }

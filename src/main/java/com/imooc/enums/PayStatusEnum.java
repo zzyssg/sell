@@ -1,6 +1,6 @@
 package com.imooc.enums;
 
-public enum PayStatusEnum {
+public enum PayStatusEnum implements CodeEnum{
     WAIT(0,"未支付"), FINISH(1, "以支付");
     private Integer code;
     private String msg;
@@ -25,4 +25,6 @@ public enum PayStatusEnum {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
+
 }

@@ -51,22 +51,26 @@ public class OrderServiceImplTest {
 
     @Test
     public void create() {
-        OrderDTO orderDTO = new OrderDTO();
-        orderDTO.setBuyerName("周杰伦");
-        orderDTO.setBuyerAddress("荷兰");
-        orderDTO.setBuyerPhone("1110");
-        orderDTO.setBuyerOpenid(BUYER_OPENID);
+        for (int i = 0; i < 25; i++) {
 
-        //购物差
-        List<OrderDetail> orderDetailList = new ArrayList<>();
-        OrderDetail o1 = new OrderDetail();
-        o1.setProductId("123455");
-        o1.setProductQuantity(3);
-        orderDetailList.add(o1);
-        orderDTO.setOrderDetailList(orderDetailList);
-        OrderDTO res = orderServiceimpl.create(orderDTO);
-        log.info("[订单创建成功] res = {}",res);
-        Assert.assertEquals("周杰伦",res.getBuyerName());
+            OrderDTO orderDTO = new OrderDTO();
+            orderDTO.setBuyerName("周杰伦" + (i + 4));
+            orderDTO.setBuyerAddress("荷兰");
+            orderDTO.setBuyerPhone("1114");
+            orderDTO.setBuyerOpenid(BUYER_OPENID);
+
+            //购物差
+            List<OrderDetail> orderDetailList = new ArrayList<>();
+            OrderDetail o1 = new OrderDetail();
+            o1.setProductId("123455");
+            o1.setProductQuantity(3);
+            orderDetailList.add(o1);
+            orderDTO.setOrderDetailList(orderDetailList);
+            OrderDTO res = orderServiceimpl.create(orderDTO);
+            log.info("[订单创建成功] res = {}", res);
+        }
+
+//        Assert.assertEquals("周杰伦",res.getBuyerName());
 
     }
 
@@ -84,6 +88,14 @@ public class OrderServiceImplTest {
         Page page =  orderServiceimpl.findList(BUYER_OPENID, pageable);
         Assert.assertEquals(3,page.getTotalElements());
     }
+
+    @Test
+    public void findListAll() {
+        PageRequest pageRequest = PageRequest.of(0, 4);
+        Page page = orderServiceimpl.findList(pageRequest);
+        Assert.assertEquals(3, page.getTotalElements());
+    }
+
 
     @Test
     public void calcle() {

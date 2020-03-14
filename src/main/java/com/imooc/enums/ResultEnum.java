@@ -1,6 +1,8 @@
 package com.imooc.enums;
 
 public enum ResultEnum {
+    SUCCESS(0,"成功"),
+
     PRARM_ERROR(1,"参数不正确"),
 
     PRODUCT_NOT_EXIST(10,"商品不存在"),
@@ -9,7 +11,12 @@ public enum ResultEnum {
     ORDERDETAIL_NOT_EXIST(13,"订单详情不存在"),
     CANCLE_FAILED(14,"取消订单失败"),
     UPDATE_FAILED(15,"更新订单失败"),
-    CART_EMPTY(18,"购物车为空");
+    CART_EMPTY(18,"购物车为空"),
+    WE_CHAT_ERROR(20, "微信公众账号错误"),
+
+    ORDER_FINISH_SUCCESS(22,"订单完结成功"),
+    PRODUCT_STATUS_ERROR(23,"商品状态不正确");
+
     private Integer code;
     private String msg;
 

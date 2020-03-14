@@ -1,7 +1,7 @@
 package com.imooc;
 
 public enum ProductStatusEnum {
-    UP(0,"下架"),DOWN(1,"下架")
+    UP(0,"上架"),DOWN(1,"下架")
     ;
     private Integer code;
     private String message;

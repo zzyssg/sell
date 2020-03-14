@@ -3,9 +3,16 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql://192.168.0.117/self?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://192.168.0.109/self?characterEncoding=utf-8&useSSL=false
   jpa:
     show-sql: true
 server:
   servlet:
     context-path: /sell
+wechat:
+  mpAppId: wx9ac24ad5d8636e27
+  mpAppSecret: 7e8a9dc26ce60a54522d86675e8b668e
+  mchId: 1483469312
+  mchKey: 098F6BCD4621D373CADE4E832627B4F6
+  keyPath: D:/var/weixin_cert/h5.p12
+  notifyUrl: http://zzyssg.natapp1.cc/sell/pay/notify
