@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 @Proxy(lazy = false)
@@ -18,6 +19,9 @@ public class ProductCategory {
 
     private String categoryName;
     private Integer categoryType;
+
+    private Date createTime;
+    private Date updateTime;
 
     public ProductCategory() {
     }
@@ -31,7 +35,21 @@ public class ProductCategory {
         this.categoryType = categoryType;
     }
 
+    public Date getCreateTime() {
+        return createTime;
+    }
 
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
 
     public Integer getCategoryId() {
         return categoryId;

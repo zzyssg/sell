@@ -15,7 +15,13 @@ public enum ResultEnum {
     WE_CHAT_ERROR(20, "微信公众账号错误"),
 
     ORDER_FINISH_SUCCESS(22,"订单完结成功"),
-    PRODUCT_STATUS_ERROR(23,"商品状态不正确");
+    PRODUCT_STATUS_ERROR(23,"商品状态不正确"),
+
+    PRODUCT_CATRGORY_NOT_EXIST(25,"商品类型不存在"),
+    FORM_DATA_ERROR(26,"表单数据不正确"),
+
+    LOGIN_FAILED(27, "登录失败"),
+    LOGOUT_SUCCESS(28,"登出成功");
 
     private Integer code;
     private String msg;
